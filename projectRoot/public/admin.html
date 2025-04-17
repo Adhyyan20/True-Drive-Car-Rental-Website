@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>True Drive | Admin Panel</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="admin-styles.css" />
+    <link rel="icon" type="image/png" href="images/1wqds2lw.png">
+  </head>
+  <body>
+    <section class="sidebar">
+      <a href="mainindex.html" class="logo">
+        <img src="./images/1wqds2lw.png" alt="True Drive Logo" class="admin-logo">
+        <span class="text">True Drive Admin</span>
+      </a>
+
+      <ul class="side-menu top">
+        <li class="active">
+          <a href="#" class="nav-link">
+            <i class="fas fa-border-all"></i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="side-menu">
+        <li>
+          <a href="mainindex.html" class="logout">
+            <i class="fas fa-right-from-bracket"></i>
+            <span class="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content">
+      <nav>
+        <i class="fas fa-bars menu-btn"></i>
+        <a href="#" class="nav-link">Dashboard Overview</a>
+        
+        <input type="checkbox" hidden id="switch-mode" />
+        <label for="switch-mode" class="switch-mode"></label>
+      </nav>
+
+      <main>
+        <div class="head-title">
+          <div class="left">
+            <h1>Dashboard</h1>
+            <ul class="breadcrumb">
+              <li>
+                <a href="#">Dashboard</a>
+              </li>
+              <i class="fas fa-chevron-right"></i>
+              <li>
+                <a href="#" class="active">Overview</a>
+              </li>
+            </ul>
+          </div>
+
+          <a href="#" class="download-btn" id="download-report">
+            <i class="fas fa-cloud-download-alt"></i>
+            <span class="text">Download Report</span>
+          </a>
+        </div>
+
+        <div class="box-info">
+          <li>
+            <i class="fas fa-car"></i>
+            <span class="text">
+              <h3>0</h3>
+              <p>Active Bookings</p>
+            </span>
+          </li>
+          <li>
+            <i class="fas fa-users"></i>
+            <span class="text">
+              <h3>587</h3>
+              <p>Total Customers</p>
+            </span>
+          </li>
+          <li>
+            <i class="fas fa-rupee-sign"></i>
+            <span class="text">
+              <h3>₹0</h3>
+              <p>Monthly Revenue</p>
+            </span>
+          </li>
+        </div>
+
+        <div class="table-data">
+          <div class="order">
+            <div class="head">
+              <h3>Recent Bookings</h3>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Customer</th>
+                  <th>Vehicle</th>
+                  <th>Pickup Date</th>
+                  <th>Return Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Data will be filled by JavaScript -->
+                <tr>
+                  <td colspan="5" style="text-align: center;">Loading bookings data...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="vehicles">
+            <div class="head">
+              <h3>Vehicle Status</h3>
+              <i class="fas fa-plus"></i>
+            </div>
+            
+            <ul class="vehicle-list">
+              <!-- Vehicle status data will be filled by JavaScript -->
+              <li class="available">
+                <p>Loading vehicles data...</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <!-- JavaScript file -->
+    <script src="admin-script.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>True Drive | Admin Panel</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+  
+    <link rel="stylesheet" href="admin-styles.css" />
+    <link rel="icon" type="image/png" href="images/1wqds2lw.png">
+  </head>
+  <body>
+    <section class="sidebar">
+      <a href="mainindex.html" class="logo">
+        <img src="./images/1wqds2lw.png" alt="True Drive Logo" class="admin-logo">
+        <span class="text">True Drive Admin</span>
+      </a>
+
+      <ul class="side-menu top">
+        <li class="active">
+          <a href="#" class="nav-link">
+            <i class="fas fa-border-all"></i>
+            <span class="text">Dashboard</span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="side-menu">
+        <li>
+          <a href="mainindex.html" class="logout">
+            <i class="fas fa-right-from-bracket"></i>
+            <span class="text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content">
+      <nav>
+        <i class="fas fa-bars menu-btn"></i>
+        <a href="#" class="nav-link">Dashboard Overview</a>
+        
+        <input type="checkbox" hidden id="switch-mode" />
+        <label for="switch-mode" class="switch-mode"></label>
+      </nav>
+
+      <main>
+        <div class="head-title">
+          <div class="left">
+            <h1>Dashboard</h1>
+            <ul class="breadcrumb">
+              <li>
+                <a href="#">Dashboard</a>
+              </li>
+              <i class="fas fa-chevron-right"></i>
+              <li>
+                <a href="#" class="active">Overview</a>
+              </li>
+            </ul>
+          </div>
+
+          <a href="#" class="download-btn" id="download-report">
+            <i class="fas fa-cloud-download-alt"></i>
+            <span class="text">Download Report</span>
+          </a>
+        </div>
+
+        <div class="box-info">
+          <li>
+            <i class="fas fa-car"></i>
+            <span class="text">
+              <h3>0</h3>
+              <p>Active Bookings</p>
+            </span>
+          </li>
+          <li>
+            <i class="fas fa-users"></i>
+            <span class="text">
+              <h3>587</h3>
+              <p>Total Customers</p>
+            </span>
+          </li>
+          <li>
+            <i class="fas fa-rupee-sign"></i>
+            <span class="text">
+              <h3>₹0</h3>
+              <p>Monthly Revenue</p>
+            </span>
+          </li>
+        </div>
+
+        <div class="table-data">
+          <div class="order">
+            <div class="head">
+              <h3>Recent Bookings</h3>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Customer</th>
+                  <th>Vehicle</th>
+                  <th>Pickup Date</th>
+                  <th>Return Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <tr>
+                  <td colspan="5" style="text-align: center;">Loading bookings data...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="vehicles">
+            <div class="head">
+              <h3>Vehicle Status</h3>
+            </div>
+            
+            <ul class="vehicle-list">
+             
+              <li class="available">
+                <p>Loading vehicles data...</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+    </section>
+
+  
+    <script src="admin-script.js"></script>
+  </body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

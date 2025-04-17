@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/1wqds2lw.png">
+    <title>True Drive Login</title>
+</head>
+<body>
+    <div class="login">
+        <img src="./img/pexels-albinberlin-919073.jpg" alt="image" class="login__bg">
+
+        <form class="login__form" id="login-form">
+            <h1 class="login__title">Login</h1>
+
+            <div class="login__inputs">
+                <div class="login__box">
+                    <input type="email" placeholder="Email ID" required class="login__input">
+                    <i class="ri-mail-fill"></i>
+                </div>
+                <div class="login__box">
+                    <input type="password" placeholder="Password" required class="login__input">
+                    <i class="ri-lock-2-fill"></i>
+                </div>
+            </div>
+
+            <div class="login__check">
+                <div class="login__check-box">
+                    <input type="checkbox" class="login__check-input" id="user-check">
+                    <label for="user-check" class="login__check-label">Remember me</label>
+                </div>
+                <a href="#" class="login__forgot">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="login__button">Login</button>
+
+            <div class="login__register">
+                Don't have an account? <a href="./register.html">Register</a>
+                <br>
+                <!-- <a href="./index.html">Back to Car Rental</a> -->
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting
+
+            let email = document.querySelectorAll('.login__input')[0].value;
+            let password = document.querySelectorAll('.login__input')[1].value;
+
+            // Retrieve stored users from localStorage
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Check if user exists and credentials match
+            let user = users.find(user => user.email === email && user.password === password);
+            if (user) {
+                // alert("Login successful!");
+                window.location.href = "./mainindex.html"; // Redirect to the main website
+            } else {
+                alert("Incorrect email or password.");
+            }
+        });
+    </script>
+</body>
+</html>

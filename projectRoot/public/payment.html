@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="mainstyle.css">
+    <link rel="stylesheet" href="payment.css">
+    <link rel="icon" type="image/png" href="images/1wqds2lw.png">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Payment - TRUE DRIVE</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nl-container">
+            <div class="container">
+                <div class="logo">
+                    <img src="./images/1wqds2lw.png">
+                </div>
+                <ul class="navlist">
+                    <li><a href="mainindex.html#home">home</a></li>
+                    <li><a href="mainindex.html#about">about</a></li>
+                    <li><a href="mainindex.html#services">services</a></li>
+                    <li><a href="mainindex.html#cars">cars</a></li>
+                    <li><a href="mainindex.html#contacts">contacts</a></li>
+                    <li><a href="http://localhost:3000">Login</a></li>
+                </ul>
+                <div class="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="payment-section">
+        <div class="container">
+            <div class="payment-container">
+                <h2>Payment Gateway</h2>
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div id="order-items">
+                        <!-- Order items will be populated by JavaScript -->
+                    </div>
+                    <div class="order-total">
+                        <p>Total: <span id="order-total-amount">Rs.0</span></p>
+                    </div>
+                </div>
+
+                <div class="payment-methods">
+                    <h3>Select Payment Method</h3>
+                    <div class="payment-methods-container">
+                        <div class="payment-method-item">
+                            <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+                            <label for="credit-card">Credit Card</label>
+                        </div>
+                        <div class="payment-method-item">
+                            <input type="radio" id="debit-card" name="payment-method" value="debit-card">
+                            <label for="debit-card">Debit Card</label>
+                        </div>
+                        <div class="payment-method-item">
+                            <input type="radio" id="upi" name="payment-method" value="upi">
+                            <label for="upi">UPI</label>
+                        </div>
+                        <div class="payment-method-item">
+                            <input type="radio" id="net-banking" name="payment-method" value="net-banking">
+                            <label for="net-banking">Net Banking</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-details" id="credit-card-form">
+                    <h3>Credit Card Details</h3>
+                    <form id="payment-form">
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiry-date">Expiry Date</label>
+                                <input type="text" id="expiry-date" placeholder="MM/YY" maxlength="5" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="password" id="cvv" placeholder="XXX" maxlength="3" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-holder">Card Holder Name</label>
+                            <input type="text" id="card-holder" placeholder="Name on Card" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" id="pay-now-btn" class="btn">Pay Now</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="payment-details" id="debit-card-form" style="display: none;">
+                    <h3>Debit Card Details</h3>
+                    <form id="debit-payment-form">
+                        <div class="form-group">
+                            <label for="debit-card-number">Card Number</label>
+                            <input type="text" id="debit-card-number" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="debit-expiry-date">Expiry Date</label>
+                                <input type="text" id="debit-expiry-date" placeholder="MM/YY" maxlength="5" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="debit-cvv">CVV</label>
+                                <input type="password" id="debit-cvv" placeholder="XXX" maxlength="3" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="debit-card-holder">Card Holder Name</label>
+                            <input type="text" id="debit-card-holder" placeholder="Name on Card" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn">Pay Now</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="payment-details" id="upi-form" style="display: none;">
+                    <h3>UPI Payment</h3>
+                    <form id="upi-payment-form">
+                        <div class="form-group">
+                            <label for="upi-id">UPI ID</label>
+                            <input type="text" id="upi-id" placeholder="example@upi" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn">Pay Now</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="payment-details" id="net-banking-form" style="display: none;">
+                    <h3>Net Banking</h3>
+                    <form id="net-banking-form">
+                        <div class="form-group">
+                            <label for="bank-select">Select Bank</label>
+                            <select id="bank-select" required>
+                                <option value="">Select Bank</option>
+                                <option value="sbi">State Bank of India</option>
+                                <option value="hdfc">HDFC Bank</option>
+                                <option value="icici">ICICI Bank</option>
+                                <option value="axis">Axis Bank</option>
+                                <option value="pnb">Punjab National Bank</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn">Proceed to Net Banking</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="payment-success-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="success-icon">
+                <span class="lnr lnr-checkmark-circle"></span>
+            </div>
+            <h2>Payment Successful!</h2>
+            <p>Your payment has been processed successfully.</p>
+            <p>Booking ID: <span id="booking-id"></span></p>
+            <p>Amount Paid: <span id="amount-paid"></span></p>
+            <button id="back-to-home" class="btn">Back to Home</button>
+        </div>
+    </div>
+
+    <script src="payment.js"></script>
+</body>
+
+</html>
