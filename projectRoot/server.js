@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; 
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -177,4 +177,5 @@ app.get('/payments', (req, res) => {
 });
 
 // Start server
+
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
